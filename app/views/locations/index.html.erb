@@ -1,0 +1,16 @@
+<h1>Locations</h1>
+
+<%= render 'form' %>
+
+
+<div id="locations">
+  <% @locations.each do |location| %> 
+    <div class="row">
+      <div class="col-md-3"><%= location.address %></div>
+      <div class="col-md-2"><%= location.latitude %> , <%= location.longitude %></div>
+      <div class="col-md-1"><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+  <% end %>
+</div>
+
+
