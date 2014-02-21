@@ -11,10 +11,10 @@ $(function () {
     }
 
     $('#checkin').click(function(e) {
+        $('#geoLocationYes').addClass('hide');
         var l = Ladda.create(this);
         l.start();
         geoPosition.getCurrentPosition(function (o) {
-            console.log(o);
             $('#checkin_latitude').val(o.coords.latitude);
             $('#checkin_longitude').val(o.coords.longitude);
             $('#checkin_accuracy').val(o.coords.accuracy);
@@ -34,6 +34,16 @@ $(function () {
                 maximumAge: 10000 //10secs
         });
     });
+
+    $('#new_checkin').on('ajax:success',function (event, checkin, status) {
+        $('#geoLocationYes').text('You were checked in at : '+checkin.address);
+        $('#geoLocationYes').removeClass('hide');
+    });    
+
+    $('#new_checkin').on('ajax:error',function (event, error, status) {
+        $('#geoLocationNo').text('Something went wrong :( Could not check you in');
+        $('#geoLocationNo').removeClass('hide');
+    });    
 });
 
 

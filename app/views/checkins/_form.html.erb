@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@checkin, remote: true) do |f| %>
+<%= bootstrap_form_for(@checkin, remote: true, format: :json) do |f| %>
     <%= f.text_field :name %>
     <%= f.hidden_field :latitude %>
     <%= f.hidden_field :longitude %>
