@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219033003) do
+ActiveRecord::Schema.define(version: 20140221000604) do
+
+  create_table "checkins", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "accuracy"
+  end
 
   create_table "locations", force: true do |t|
     t.string   "address"

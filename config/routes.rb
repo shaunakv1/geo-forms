@@ -1,4 +1,6 @@
 GeoForms::Application.routes.draw do
+  resources :checkins
+
   resources :locations
 
   # The priority is based upon order of creation: first created -> highest priority.
