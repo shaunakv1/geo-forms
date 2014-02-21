@@ -11,8 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require geoPosition
+//= require spin
+//= require ladda
 //= require_tree .
+
+
+//= require turbolinks

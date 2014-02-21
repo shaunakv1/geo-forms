@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@location, remote: true, style: :inline, left: "col-sm-4", right: "col-sm-2") do |f| %>
+<%= bootstrap_form_for(@location, remote: true, style: :inline) do |f| %>
   <%= f.text_field :address, hide_label: true, placeholder: "Enter a location or address..." %>
   <%= f.form_group do %>
     <%= f.submit 'create', class: "btn btn-primary" %>
