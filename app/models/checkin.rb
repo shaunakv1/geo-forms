@@ -7,6 +7,11 @@ class Checkin < ActiveRecord::Base
 	def verified_location
 			self.location.blank? ? 'none' : self.location.address
 	end
+	
+	def verified_location_class
+			markup = self.location.blank? ? "<div class='red'> <i class='fa fa-times'></i> Unverified Location</div>" : "<div class='green'> <i class='fa fa-check'></i> Verified Location</div>"
+			markup.html_safe
+	end
 
 	def screen_name
 		 self.name.blank? ? 'Jane Doe' : self.name

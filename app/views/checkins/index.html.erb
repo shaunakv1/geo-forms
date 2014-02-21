@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="5" />
+
 <div class="row">
   <div class="col-xs-2 col-xs-offset-5">
     <h2>Checkin Feed</h2>
@@ -32,6 +32,9 @@
               Checked in from <%= checkin.address %>
               <%#= checkin.verified_location %>
               <%#= link_to 'Destroy', checkin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+            <div class="status">
+              <%= checkin.verified_location_class %> 
             </div>
           </div>
         </div>

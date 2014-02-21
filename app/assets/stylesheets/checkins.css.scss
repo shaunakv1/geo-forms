@@ -69,7 +69,7 @@ top: 0px;
 display: block;
 position: relative;
 margin-top: 2px;
-padding-bottom: 19px;
+padding-bottom: 25px;
 padding-left: 7px;
 font-size: 13px;
 }
@@ -77,4 +77,17 @@ font-size: 13px;
 .orange {
 color: #ff892a!important;
 font-weight: normal;
+}
+
+.red {
+	color: #dd5a43!important;
+}
+
+.green {
+	color: #69aa46!important;
+}
+.status{
+	position: absolute;
+	right: 9px;
+	top: 39px;
 }
