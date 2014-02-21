@@ -1,8 +1,21 @@
-<%= bootstrap_form_for(@checkin, remote: true, format: :json) do |f| %>
-    <%= f.text_field :name %>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-    <%= f.hidden_field :accuracy %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div id="geoLocationYes" class="alert alert-success hide">Awesome! Geolocation is supported :) Remember to give your browser permission</div>
+    <div id="geoLocationNo" class="alert alert-danger hide">Oh Snap! Geolocation is not supported :(</div>
+  </div>  
+</div>
 
-<%= button_tag '<span class="ladda-label">Check-in</span>'.html_safe, id:"checkin", class: "btn btn-primary btn-lg ladda-button", :data => {style: "expand-left", size: "l"}  %>
+<div class="row">
+    <div class="col-md-3 col-md-offset-4">
+      <%= bootstrap_form_for(@checkin, remote: true, format: :json) do |f| %>
+          <%= f.text_field :name , hide_label: true, class: "largeTextField" %>
+          <%= f.hidden_field :latitude %>
+          <%= f.hidden_field :longitude %>
+          <%= f.hidden_field :accuracy %>
+      <% end %>
+      </div>  
+      <div class="col-md-1">
+      <%= button_tag '<span class="ladda-label">Check-in</span>'.html_safe, id:"checkin", class: "btn btn-primary btn-lg ladda-button", :data => {style: "expand-left", size: "l"}  %>      
+    </div>
+</div>
+
