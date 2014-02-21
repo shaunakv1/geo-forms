@@ -25,7 +25,10 @@ class CheckinsController < ApplicationController
   # POST /checkins.json
   def create
     @checkin = Checkin.new(checkin_params)
-
+    
+    locations = Location.near([@checkin.latitude,@checkin.longitude], 2);
+    @checkin.location = locations.first unless locations.empty?
+    
     respond_to do |format|
       if @checkin.save
         format.html { redirect_to @checkin, notice: 'Checkin was successfully created.' }
