@@ -40,6 +40,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'bootstrap_form'
 
+gem "font-awesome-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

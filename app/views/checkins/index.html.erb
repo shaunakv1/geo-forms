@@ -1,34 +1,39 @@
-<h1>Listing checkins</h1>
+<div class="row">
+  <div class="col-xs-2 col-xs-offset-5">
+    <h2>Checkin Feed</h2>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @checkins.each do |checkin| %>
-      <tr>
-        <td><%= checkin.name %></td>
-        <td><%= checkin.address %></td>
-        <td><%= checkin.latitude %></td>
-        <td><%= checkin.longitude %></td>
-        <td><%= checkin.verified_location %></td>
-        <td><%= link_to 'Show', checkin %></td>
-        <td><%= link_to 'Edit', edit_checkin_path(checkin) %></td>
-        <td><%= link_to 'Destroy', checkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
+<br>
 
-<%= link_to 'New Checkin', new_checkin_path %>
+<% @checkins.each do |checkin| %>
+  <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="itemdiv commentdiv">
+          <div class="user">
+            <%= image_tag("avatar.png") %>    
+          </div>
+
+          <div class="body">
+            <div class="name">
+              <%= checkin.screen_name %>
+            </div>
+
+            <div class="time">
+              <i class="fa fa-clock-o fa-lg"></i>
+              <span class="orange"> <%= time_ago_in_words(checkin.created_at) %> </span>
+            </div>
+
+            <div class="text">
+              <i class="fa fa-quote-left"></i>
+              Checked in from <%= checkin.address %>
+              <%#= checkin.verified_location %>
+              <%#= link_to 'Destroy', checkin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div> 
+<% end %>  
