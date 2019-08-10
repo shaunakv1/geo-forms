@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20140221213217) do
 
-  create_table "checkins", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "checkins", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.float    "latitude"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140221213217) do
     t.integer  "location_id"
   end
 
-  create_table "locations", force: true do |t|
+  create_table "locations", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"

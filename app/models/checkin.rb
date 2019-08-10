@@ -2,7 +2,7 @@ class Checkin < ActiveRecord::Base
 	belongs_to :location
 	reverse_geocoded_by :latitude, :longitude
 	after_validation :reverse_geocode,  :if => :latitude_changed? or :longitude_changed?
-	default_scope order('created_at DESC')
+	default_scope { order('created_at DESC') }
 
 	def verified_location
 			self.location.blank? ? 'none' : self.location.address
