@@ -75,6 +75,6 @@ test:
 #
 production:
   <<: *default
-  database: geo_forms_production
+  database: <%= ENV['DATABASE_URL'] %>
   username: geo_forms
   password: <%= ENV['GEO_FORMS_DATABASE_PASSWORD'] %>
