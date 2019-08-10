@@ -36,7 +36,7 @@ end
 
 gem "geocoder"
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'bootstrap_form'
 
